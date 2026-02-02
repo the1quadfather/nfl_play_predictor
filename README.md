@@ -15,27 +15,6 @@ This project utilizes historical NFL play-by-play data (2013–2023) to train a 
 * **Interactive Dashboard:** A Jupyter-based GUI for real-time inference during live games.
 * **Modular Architecture:** Separation of concerns between data processing (`src`), experimentation (`notebooks`), and production logic.
 
-## 🏗️ Architecture
-
-The repository follows a production-grade Data Science structure:
-
-```text
-nfl-play-predictor/
-├── data/
-│   ├── raw/                   # Historical CSV data
-│   └── models/                # Serialized XGBoost pipelines (.joblib)
-├── notebooks/
-│   ├── 01_model_training.ipynb       # ETL, Encoding, Training, & Evaluation
-│   └── 02_interactive_inference.ipynb # User-facing Prediction Dashboard
-├── src/
-│   ├── __init__.py
-│   └── nfl_utils.py           # Shared logic for cleaning & feature engineering
-├── requirements.txt           # Dependency management
-└── README.md
-
-Created using NFL Savant's play-by-play data. All libraries, APIs, and data references should be considered attributed to their respective owners.
-Any references to this repository, code, or linked code should be attributed to Schraeder Technologies.
-
 # **Getting Started**
 **1. Clone the repo**
 git clone [https://github.com/yourusername/nfl-play-predictor.git](https://github.com/yourusername/nfl-play-predictor.git)
@@ -73,3 +52,25 @@ Run notebooks/01_model_training.ipynb to process the raw data and generate the m
 -Feature Engineering: Integrate "Score Differential" (a critical predictor for run/pass splits).
 -Time Series: Combine Minutes/Seconds into a continuous SecondsRemaining feature.
 - Deployment: Wrap the inference engine in a Flask/Streamlit app for web access.
+
+Created using NFL Savant's play-by-play data. All libraries, APIs, and data references should be considered attributed to their respective owners.
+
+Any references to this repository, code, or linked code should be attributed to Schraeder Technologies.
+
+## 🏗️ Architecture
+
+The repository follows a production-grade Data Science structure:
+
+```text
+nfl-play-predictor/
+├── data/
+│   ├── raw/                   # Historical CSV data
+│   └── models/                # Serialized XGBoost pipelines (.joblib)
+├── notebooks/
+│   ├── 01_model_training.ipynb       # ETL, Encoding, Training, & Evaluation
+│   └── 02_interactive_inference.ipynb # User-facing Prediction Dashboard
+├── src/
+│   ├── __init__.py
+│   └── nfl_utils.py           # Shared logic for cleaning & feature engineering
+├── requirements.txt           # Dependency management
+└── README.md

@@ -18,11 +18,15 @@ This project utilizes historical NFL play-by-play data (2013–2023) to train a 
 # **Getting Started**
 **1. Clone the repo**
 git clone [https://github.com/yourusername/nfl-play-predictor.git](https://github.com/yourusername/nfl-play-predictor.git)
+
 cd nfl-play-predictor
 
 **2. Create venv**
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+source venv/bin/activate  
+
+**On Windows:** venv\Scripts\activate
 
 **3. Install dependencies**
 pip install -r requirements.txt
@@ -42,11 +46,16 @@ Run notebooks/01_model_training.ipynb to process the raw data and generate the m
 🧠 Model Details
 - Algorithm: XGBoost Classifier (Gradient Boosted Trees)
 - Objective: Multi-class Softprob
--Features:
+- Features:
+
 -- Context: Quarter, MinutesRemaining, SecondsRemaining
+
 -- State: Down, ToGo (Yards needed), YardLine (Field position)
+
 -- Teams: OffenseID, DefenseID (Categorical Embeddings)
+
 -- Performance: ~75% Accuracy (significantly outperforming the ~50% linear baseline).
+
 
 🔮 Future Improvements
 -Feature Engineering: Integrate "Score Differential" (a critical predictor for run/pass splits).
